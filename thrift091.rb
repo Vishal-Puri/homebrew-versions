@@ -2,8 +2,12 @@ require 'formula'
 
 class Thrift < Formula
   homepage 'http://thrift.apache.org'
-  url 'http://www.apache.org/dyn/closer.cgi?path=thrift/0.9.1/thrift-0.9.1.tar.gz'
-  sha1 'fefcf4d729bf80da419407dfa028740aa95fa2e3'
+  # The thrift.apache.org 0.9.1 archive is missing PHP ext, fixed in THRIFT-2129
+  # By grabbing the source from git instead, it's fixed, but we need to bootstrap 
+  url 'https://git-wip-us.apache.org/repos/asf/thrift.git', :branch => "0.9.1"
+  version "0.9.1"
+  #url 'http://www.apache.org/dyn/closer.cgi?path=thrift/0.9.1/thrift-0.9.1.tar.gz'
+  #sha1 'fefcf4d729bf80da419407dfa028740aa95fa2e3'
 
   head do
     url 'https://git-wip-us.apache.org/repos/asf/thrift.git', :branch => "master"
